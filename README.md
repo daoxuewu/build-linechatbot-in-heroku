@@ -65,14 +65,14 @@ heroku git:remote -a 你的APP名稱
 ```
 最後輸入下列三個步驟就可以成功將我們的資料夾推到Heroku了，之後修改程式要上傳時也是輸入以下指令即可
 ```
-git add.
+git add .
 git commit -m "註解，你這次做了什麼改動"
 git push heroku master
 ```
 關於Heroku cli的相關指令我有整理在[這](https://github.com/daoxuewu/my-cs-note/blob/master/note/heroku_CLI.md)有需要可以去看  
 
 ### LINE Developers
-最後的最後，回到[LINE Developers](https://developers.line.biz/console/)上。進到剛剛創造的 Provider 的 Messaging API 裡。有一個 "Messaging Settings" 的設定區，如下圖，記得要將紅框處的 "Use webhooks" 用右邊的 "Edit" 改成 "Enabled"。在綠框處 "Webhook URL" 透過右邊的 "Edit" 改成 "https://你的APP名稱.herokuapp.com/callback"。按下 "Verify"，如果出現"Success" 那就是成功了。
-
+最後的最後，回到[LINE Developers](https://developers.line.biz/console/)上。進到剛剛創造的 Provider 的 Messaging API 裡。有一個 "Messaging Settings" 的設定區，如下圖，在Webhook settings的欄位下方點擊Edit 後在"Webhook URL"輸入"https://你的APP名稱.herokuapp.com/callback"。按下 "Verify"，如果出現"Success" 那就是成功了。
+![img](img/webhook_setting.PNG)
 
 
