@@ -1,4 +1,4 @@
-# 快速佈署Line聊天機器人在Heroku平台上教學
+# 如何佈署Line聊天機器人在Heroku平台上
 ## 參考資料
 > [從LINE BOT到資料視覺化：賴田捕手系列](https://ithelp.ithome.com.tw/articles/10216620) 
 
@@ -74,5 +74,28 @@ git push heroku master
 ### LINE Developers
 最後的最後，回到[LINE Developers](https://developers.line.biz/console/)上。進到剛剛創造的 Provider 的 Messaging API 裡。有一個 "Messaging Settings" 的設定區，如下圖，在Webhook settings的欄位下方點擊Edit 後在"Webhook URL"輸入"https://你的APP名稱.herokuapp.com/callback"。按下 "Verify"，如果出現"Success" 那就是成功了。
 ![img](img/webhook_setting.PNG)
+
+### 建立PostgreSQL資料庫
+
+Heroku 所提供的資料庫叫做 Heroku Postgres，屬於 PostgreSQL，是關聯性資料庫(relational database)的其中一種。
+Heroku Postgres 是掛載在 dyno 下的擴充元件(add-ons)。一個 dyno 可以掛載多個資料庫，而資料庫也可以連接到多個 dyno。  
+
+以下指令可以查詢我們有哪些掛載的擴充元件(add-ons)
+```
+heroku addons -a 你的APP名稱
+```
+可以在[此](https://elements.heroku.com/addons/heroku-postgresql#hobby-dev)網站查詢Heroku Postgres的各種規格，我們可以看需求去選擇要哪個資費的方案
+
+下面指令我們創建了免費方案hobby-dev，提供 10000 則資料的容量以及最多 20 個使用者同時連線操作。
+```
+heroku addons:create heroku-postgresql:hobby-dev
+```
+可以用這個指令跟Heroku要我們的資料庫位址
+```
+heroku config:get DATABASE_URL -a 你的APP名稱
+```
+
+有了URL之後就可以對資料庫使用SQL語法開始進行創建資料庫表格、欄位等等的~
+也可以使用[pgAdmin](https://www.pgadmin.org/)這個好用的工具來讓資料庫管理更方便
 
 
