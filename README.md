@@ -98,4 +98,4 @@ heroku config:get DATABASE_URL -a 你的APP名稱
 有了URL之後就可以對資料庫使用SQL語法開始進行創建資料庫表格、欄位等等的~
 也可以使用[pgAdmin](https://www.pgadmin.org/)這個好用的工具來讓資料庫管理更方便
 
-
+關於資料庫備份，免費的需要手動備份，付費的可以設定自動備份，詳細資料可以在[這](https://devcenter.heroku.com/articles/heroku-postgres-backups)查看
