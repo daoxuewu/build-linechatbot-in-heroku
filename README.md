@@ -30,7 +30,7 @@ heroku create 你的APP名稱
 ```
 web: gunicorn main:app –preload
 ```
-**注意:Procfile是一個沒有副檔名的檔案，你可以先用記事本將上面那段文字存成Procfile.txt之後，再把檔案重新命名成Procfile**
+**注意:Procfile是一個沒有副檔名的檔案，而且[P是大寫!!](https://stackoverflow.com/a/53184918)你可以先用記事本將上面那段文字存成Procfile.txt之後，再把檔案重新命名成Procfile**
 
 - requirements.txt  
 告訴 Heroku 需要安裝那些套件。這裡比較有趣的是，我們的電腦本身沒有安裝這些套件也沒關係，Heroku 提供的伺服器才是我們的應用程式真正運行的地方，因此 Heroku 那邊有裝就可以。而我目前的requirements.txt裡面是長這樣的：
